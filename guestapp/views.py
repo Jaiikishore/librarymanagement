@@ -64,9 +64,9 @@ def request_res(request):
 def cancel_res(request):
     if request.method == "POST":
         form = CForm(request.POST)
-        print(form)
-        print(form.is_valid())
-        print(form.errors)
+        # print(form)
+        # print(form.is_valid())
+        # print(form.errors)
         #print(form.cleaned_data)
         if form.is_valid():
                 conn = pymongo.MongoClient()
@@ -74,7 +74,7 @@ def cancel_res(request):
                 col = db["reserved"]
                 query1 = { "res_id" : form.cleaned_data['res_id'] }
                 doc = col.find_one(query1)
-                print(doc)
+                # print(doc)
                 if doc:
                     isbn = doc["isbn"]
                     col.delete_one( { 'res_id' : form.cleaned_data['res_id'] } )
