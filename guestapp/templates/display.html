@@ -1,0 +1,106 @@
+{% load static %}
+<html>
+    <head>
+        <style>
+            h1{
+                text-align: center;
+                font-size: 35pt;
+                color: rgb(55, 55, 55);
+            }
+            table{
+                margin-left: auto;
+                margin-right: 70px;
+                width : 75%;
+
+            }
+            th {
+                font-size: 20pt;
+                color: rgb(0, 0, 0);
+            }
+            td{
+                font-size: 18pt;
+                color: rgb(0, 0, 0);
+                height: 50px;
+            }
+            table, th, td {
+                border: solid 1px rgba(58, 59, 62, 0.795) ;
+                border-collapse: collapse;
+                text-align: center;
+            }
+            th, td {
+                background-color: rgba(0, 0, 0, 0.142);
+                padding: "10px";
+            }
+            .container {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+            }
+            .menu {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                position: fixed;
+                margin-top: 120px;
+                margin-left: 20;
+            }
+            a:link, a:visited {
+                background-color: rgb(161, 175, 223);
+                font-size: 20;
+                font-style: bold;
+                color: rgb(0, 0, 0);
+                border-radius: 15px;
+                padding-inline: 15px;
+                padding-block: 15px;
+                box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.179);
+
+            }
+            a:hover {
+            background-color: rgb(207, 222, 199);
+        }
+            body {
+                background-image: url({% static 'guestapp/whity.jpg' %});
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="menu">
+                <a href="http://127.0.0.1:8000/guest/requestreservations" style = "text-decoration: none;">Reserve a book</a><br>
+                <a href="http://127.0.0.1:8000/guest/cancelreservations" style = "text-decoration: none;">Cancel reservation</a><br>
+                <a href="http://127.0.0.1:8000/guest/home" style = "text-decoration: none;">Return to homepage</a><br>
+            </div>
+            <div class="right">
+
+                <h1>BOOKS LIST:</h1>
+                <table>
+                    <tr>
+                        <TH>ISBN</TH>
+                        <TH>Book name</TH>
+                        <TH><SPAN>Author</SPAN></TH>
+                        <TH><SPAN>Count</SPAN></TH>
+                        <TH><SPAN>Borrowed</SPAN></TH>
+                        <TH><SPAN>Reserved</SPAN></TH>
+                        <TH><SPAN>Available</SPAN></TH>
+                    </tr>
+                    {% for x in data %}
+                        <tr class="table-row">
+                            <TD class="c2">{{ x.ISBN }}</TD>
+                            <TD class="c3">{{ x.name }}</TD>
+                            <TD class="c4"><SPAN>{{ x.Au }}</SPAN></TD>
+                            <TD class="c5"><SPAN>{{ x.Ct }}</SPAN></TD>
+                            <TD class="c4"><SPAN>{{ x.Bor }}</SPAN></TD>
+                            <TD class="c5"><SPAN>{{ x.Res }}</SPAN></TD>
+                            <TD class="c4"><SPAN>{{ x.Av }}</SPAN></TD>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

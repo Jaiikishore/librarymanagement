@@ -1,0 +1,52 @@
+{% load static %}
+<html>
+    <head>
+        <style>
+            body {
+                background-image: url({% static 'guestapp/whity.jpg' %});
+            }
+            .container {
+                margin-top: 10%;
+                display: flex;
+                flex-direction: column;
+                justify-items: center;
+                align-items: center;
+            }
+            h1 {
+                font-size: 35pt;
+                text-align: center;
+            }
+            h2 {
+                font-family: 'Franklin Gothic Book', sans-serif;
+                font-size: 32pt;
+                border-color: gainsboro;
+                border-style: solid;
+                background-color: black;
+                padding: 10px;
+                padding-inline: 25px;
+            }
+            a:link, a:visited {
+                background-color: rgb(161, 175, 223);
+                font-size: 20;
+                font-style: bold;
+                color: rgb(0, 0, 0);
+                border-radius: 15px;
+                padding-inline: 15px;
+                padding-block: 15px;
+                box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.179);
+
+            }
+            a:hover {
+            background-color: rgb(207, 222, 199);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Reservation successful!<br><br>Reservation ID:<h2>{{ data }}</h2></h1>
+            <br><br>
+            <a href="http://127.0.0.1:8000/guest/requestreservations", style = "text-decoration: none;">Reserve another book</a><br>
+            <a href="http://127.0.0.1:8000/guest/cancelreservations", style = "text-decoration: none;">Cancel a reservation</a><br>
+            <a href="http://127.0.0.1:8000/guest/home", style = "text-decoration: none;">Return to homepage</a><br>
+        </div>
+    </body>

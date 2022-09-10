@@ -1,0 +1,91 @@
+.div1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1{
+    padding-top: 10%;
+    font-size: 30pt;
+    font-family: Centaur, sans-serif;
+    font-style: underline;
+    color: gainsboro;
+    border-bottom-style: double;
+    border-bottom-color: gainsboro;
+    border-bottom-width: 2px;
+    width:max-content;
+}
+
+.field {
+    width:25rem;
+    background-color: black;
+    color: gainsboro;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: gainsboro;
+    padding-inline: 15px;
+    padding-block: 10px;
+    margin-top: 10px;
+    font-size: 1.2rem;
+}
+
+
+.label {
+    font-family: Centaur, sans-serif;
+    font-size: 20pt;
+    color: gainsboro;
+}
+
+a:link, a:visited {
+    background-color: black;
+    font-size: 20pt;
+    font-family: Centaur, serif;
+    font-style: bold;
+    color: powderblue;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 5px;
+    border-color: gainsboro;
+    padding-inline: 15px;
+    padding-block: 5px;
+}
+
+body {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    background-color: black;
+    font-family: Centaur, sans-serif;
+    font-size: 20pt;
+    color: gainsboro;
+    text-align: center;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 5px;
+    border-color: gainsboro;
+    padding-inline: 15px;
+    padding-block: 5px;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: calc(20%);
+
+}
+
+.container-1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(90%);
+
+}
